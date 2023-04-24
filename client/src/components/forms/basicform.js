@@ -15,18 +15,19 @@ const BasicForm = () => {
             
                
             <div className="email">
-                <label htmlFor="email">Email</label>
+                <label for="email">Email</label>
                 <input type="text" />
             </div>
 
             <div className="email">
-                <label htmlFor="password">Password</label>
+                <label for="password">Password</label>
                 <input type="password" />
                 
 
             </div>
 
             <button className="buttonLog" type="submit">Login</button>
+            <button className="noAccount" type="submit">Don't have an acoount? Register here.</button>
             </div>
         </div>
         </form>
