@@ -17,6 +17,7 @@ export const Login = (props) => {
                 <img className="logo" src={logo} alt="Tracenet logo" />
             </div>
                 <h1 className="title">TRACENET</h1>
+                
         </div>
 
         <div className="bodyForm">
