@@ -1,65 +1,72 @@
-import Link from "next/link";
+"use client";
 
-const Form = ({ type,post, setPost, submitting, handleSubmit, }) => {
+import { useState, useEffect } from "react";
+
+const Feed = () => {
+  const [allPosts, setAllPosts] = useState([]);
+
+  const [searchText, setSearchText] = useState("");
+  const [searchTimeout, setSearchTimeout] = useState(null);
+  const [searchedResults, setSearchedResults] = useState([]);
+
+  const fetchPosts = async () => {
+    const response = await fetch("/api/prompt");
+    const data = await response.json();
+
+    setAllPosts(data);
+  };
+
+  useEffect(() => {
+    fetchPosts();
+  }, []);
+
+  const filterPrompts = (searchtext) => {
+    const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
+    return allPosts.filter(
+      (item) =>
+        regex.test(item.creator.username) ||
+        regex.test(item.tag) ||
+        regex.test(item.prompt)
+    );
+  };
+
+  const handleSearchChange = (e) => {
+    clearTimeout(searchTimeout);
+    setSearchText(e.target.value);
+
+    // debounce method
+    setSearchTimeout(
+      setTimeout(() => {
+        const searchResult = filterPrompts(e.target.value);
+        setSearchedResults(searchResult);
+      }, 500)
+    );
+  };
+
+
   return (
-    <section className="w-full max-w-full flex-start flex-col">
-      <h1 className="head_text text-left">
-        <span className="blue_gradient">{type} Post </span>
-      </h1>
-      <p className="desc text-left max-w-md">
-        {type} and share amazing prompts with the world and let your imagination run wild with any ai powered platfrom
-      </p>
-
-      <form
-      onSubmit={handleSubmit}
-      className="mt-10 w-full max-w-2x1 flex flex-col gap-7 glassmorphism">
-
-        <label>
-          <span className="font-satoshi font-semibold text-base text-gray-700">
-            Your AI Prompt
-
-          </span>
-          <textarea
-            value={post.prompt}
-            onChange={(e) => setPost({ ...post, prompt: e.target.value })}
-            placeholder="Write your prompt here ..."
-            required
-            className="form-textarea"
-            />
-        </label>
-
-        <label>
-          <span className="font-satoshi font-semibold text-base text-gray-700">
-            Tag {' '}
-            <span className="font-normal"> (#product, #webdevelopment, #idea)</span>
-
-          </span>
-          <input
-            value={post.tag}
-            onChange={(e) => setPost({ ...post, tag: e.target.value })}
-            placeholder="#tag"
-            required
-            className="form-input"
-            />
-        </label>
-
-        <div className="flex-end mx-3 mb-5 gap-4">
-          <Link href="/" className="text-gray-500 text-sm">
-            Cancel 
-          </Link>
-
-        <button
-          type="submit"
-          disabled={submitting}
-          className="ps-5 py-1.5 text-sm bg-primary-orange rounded-full text-white"
-        >
-          {submitting ? `${type}...` : type }
-        </button>
-        </div>
+    <section className='feed'>
+      <form className='relative w-full flex-center'>
+        <input
+          type='text'
+          placeholder='Search for a tag or a username'
+          value={searchText}
+          onChange={handleSearchChange}
+          required
+          className='search_input peer'
+        />
       </form>
 
+      
+      {searchedResults.map((post) => (
+        <div key={post._id} className="mt-16">
+          {/* Render the individual post */}
+          <h2>{post.title}</h2>
+          <p>{post.content}</p>
+        </div>
+      ))}
     </section>
-  )
-}
+  );
+};
 
-export default Form
+export default Feed;

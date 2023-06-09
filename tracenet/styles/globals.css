@@ -26,10 +26,15 @@
   justify-content: center;
   padding: 120px 24px 160px 24px;
   pointer-events: none;
+  background-image: url("/assets/images/tracenet.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
 }
 
 .main:before {
-  background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
+  background: radial-gradient(to right,  rgba(2, 0, 36, 0), #fafafa);       
   position: absolute;
   content: "";
   z-index: 2;
@@ -69,8 +74,7 @@
   position: absolute;
   content: "";
   width: 100%;
-  height: 100%;
-  filter: blur(100px) saturate(150%);
+  height: 80%;
   top: 80px;
   opacity: 0.15;
 }
@@ -112,34 +116,62 @@
 }
 
 .desc {
-  @apply mt-5 text-xl text-blue-900 sm:text-xl text-center; animation-name: runningText;
-  animation-duration: 8s;
+  @apply mt-5 text-xl text-white sm:text-xl text-center;
+  animation-name: fadeIn;
+  animation-duration: 2s;
   animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
   white-space: nowrap;
   overflow: hidden;
+  
 }
 
-@keyframes runningText {
+@keyframes fadeIn {
   0% {
-    left: 80%;
-    opacity: 1;
-  }
-  50% {
     opacity: 0;
-  }
-  51% {
-    left: -100%;
-    opacity: 0;
-    text-decoration: none;
+    filter: blur(8px);
   }
   100% {
-    left: -100%;
     opacity: 1;
-    
+    filter: blur(0);
   }
 }
 
+
+.head_container {
+  background: transparent;
+  padding: 20px;
+  border-radius: 0.75rem;
+  
+}
+
+.square_btn {
+  @apply
+    w-48
+    h-48
+    flex
+    items-center
+    justify-center
+    rounded-lg
+    text-white
+    text-lg
+    font-inter
+    transition-all
+    cursor-pointer;
+}
+
+.square_btn:hover {
+  @apply opacity-75;
+}
+
+.lost {
+  @apply bg-blue-500;
+}
+
+.found {
+  @apply bg-blue-500;
+}
 .search_input {
   @apply block w-full rounded-md border border-gray-200 bg-white py-2.5 font-satoshi pl-5 pr-12 text-sm shadow-lg font-medium focus:border-black focus:outline-none focus:ring-0;
 }
@@ -172,7 +204,7 @@
 
 /* Nav Component */
 .logo_text {
-  @apply max-sm:hidden font-satoshi font-semibold text-lg text-black tracking-wide;
+  @apply max-sm:hidden font-satoshi font-semibold text-lg text-white tracking-wide;
 }
 
 .dropdown {
