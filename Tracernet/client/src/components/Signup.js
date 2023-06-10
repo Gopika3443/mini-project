@@ -29,7 +29,6 @@ const Signup = () => {
   </form>
   <p>Don't have an account? <a href="" class="a2">Sign up!</a></p>
 </div>
-    
   );
 };
 

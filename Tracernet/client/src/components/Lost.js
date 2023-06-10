@@ -1,25 +1,21 @@
 import React from 'react'
-import "./Lost.css"
+import "./Lost.css";
+
 const Lost = () => {
   return (
-  <div className="lost-container"> 
-    <div className="title">
-        <h2>Find The Lost</h2>
-        <div>
-            <form className="input" > 
-    <input  type="text" placeholder="Name of lost"/>
-    <input  type="number" placeholder="Age of lost"/>
-    <input  type="text" placeholder="Gender of lost"/>
-    <input  type="text" placeholder="Location where lost"/>
-    <input  type="number" placeholder="Contact"/>
-
-    <textarea  placeholder="Enter description of lost"></textarea> 
+    <div className="form">
+    <form class="form">
+    <input class="input" type="text" placeholder="Name"/>
+    <input class="input" type="number" placeholder="Age"/>
+    <input class="input" type="text" placeholder="Gender"/>
+    <input class="input" type="number" placeholder="Phone number"/>
+    <input class="input" type="text" placeholder="E-Mail I.D."/>
+    <textarea class="textarea" placeholder="Enter message"></textarea> 
     <center><button class="button">Submit</button></center>
-            </form>
-        </div>
-    </div> 
-  </div> 
-  );
-};
+</form>
+</div>
+  
+    )
+}
 
 export default Lost
