@@ -1,32 +1,19 @@
 import React, { useState } from 'react';
-import { Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalFooter } from '@chakra-ui/react';
 import "./Frontpage.css";
-import "./Land.css";
+import {
+  Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  FormControl,
+  FormLabel,
+  Input,
+  ModalFooter,
+} from "@chakra-ui/react";
 
-const SignupForm = () => {
-  return (
-    <div className="login-box">
-      <form>
-        <div className="user-box">
-          <input required name="email" type="text"/>
-          <label>Email</label>
-        </div>
-        <div className="user-box">
-          <input required name="phone" type="number"/>
-          <label>Phone</label>
-        </div>
-        <div className="user-box">
-          <input required name="password" type="password"/>
-          <label>Password</label>
-        </div>
-        <Button type="submit" colorScheme="teal" variant="solid" marginTop="40px">
-          Submit
-        </Button>
-      </form>
-      <p>Don't have an account? <a href="" className="a2">Sign up!</a></p>
-    </div>
-  );
-};
 
 const Frontpage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,19 +25,38 @@ const Frontpage = () => {
   const handleCloseDialog = () => {
     setIsOpen(false);
   };
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+  
+    const handleSignup = () => {
+      // Handle signup logic here
+      console.log("Username:", username);
+      console.log("Password:", password);
+      handleCloseModal(); // Close the modal
+    };
+    const handleOpenModal = () => {
+        setIsOpen(true);
+      };
+    
+      const handleCloseModal = () => {
+        setIsOpen(false);
+      };
 
   return (
     <div className="landing-page">
-<header>
+      <header>
         <div className="container">
+          <div className="logo-container">
+            <img src="tracenetlogo.jpg" className="logosize"/>
           <a href="#" className="logo">Tracenet</a>
+          </div>
           <ul className="links">
             <li>Home</li>
             <li>About Us</li>
-            <li>Work</li>
-            <li>Info</li>
+            <li>Add Case</li>
+            <li>Feedback</li>
             <li>
-              <Button onClick={handleOpenDialog}>Get Started</Button>
+              <Button onClick={handleOpenModal}>Get Started</Button>
             </li>
           </ul>
         </div>
@@ -58,27 +64,49 @@ const Frontpage = () => {
       <div className="content">
         <div className="container">
           <div className="info">
-            <h1>Looking For Inspiration</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus odit nihil ullam nesciunt quidem iste, Repellendus odit nihil</p>
-            <Button onClick={handleOpenDialog}>Button name</Button>
+            <h1>TRACENET</h1>
+            <p>The Elite Lost and Found - Lost Today, Found Tomorrow</p>
+            <Button onClick={handleOpenDialog}>Sign In</Button>
           </div>
           <div className="image">
             <img src="https://i.postimg.cc/65QxYYzh/001234.png" alt="Inspiration" />
           </div>
         </div>
-      </div>     
-       <Modal isOpen={isOpen} onClose={handleCloseDialog}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Sign up</ModalHeader>
-          <ModalBody>
-            <SignupForm />
-          </ModalBody>
-          <ModalFooter>
-            <Button colorScheme="red" variant="ghost" onClick={handleCloseDialog}>Close</Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
+      </div>
+      <Modal isOpen={isOpen} onClose={handleCloseModal}>
+      <ModalOverlay />
+      <ModalContent>
+        <ModalHeader>Sign Up</ModalHeader>
+        <ModalCloseButton />
+        <ModalBody>
+          <FormControl>
+            <FormLabel>Username</FormLabel>
+            <Input
+              placeholder="Enter your username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </FormControl>
+          <FormControl mt={4}>
+            <FormLabel>Password</FormLabel>
+            <Input
+              type="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </FormControl>
+        </ModalBody>
+        <ModalFooter>
+          <Button colorScheme="blue" mr={3} onClick={handleSignup}>
+            Sign Up
+          </Button>
+          <Button variant="ghost" onClick={handleCloseModal}>
+            Cancel
+          </Button>
+        </ModalFooter>
+      </ModalContent>
+    </Modal>
     </div>
   );
 };
