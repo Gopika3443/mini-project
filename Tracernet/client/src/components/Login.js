@@ -26,6 +26,11 @@ const Login = () => {
     // Additional login logic goes here
   };
 
+  const handleLoggedin=()=>{
+    window.localStorage.removeItem("isLoggedIn")
+    console.log("hyy")
+  }
+
   return (
     <VStack justifyContent="center" alignItems="center" h="100vh">
       <div className="login-div">
@@ -63,9 +68,9 @@ const Login = () => {
           <HStack mt="20px" justifyContent="flex-end">
             <VStack alignItems="flex-end">
               <p>Don't have an account?</p>
-              <Link color="blue.500" fontSize="sm">
+              <Button onClick={handleLoggedin} color="blue.500" fontSize="sm">
                 Sign Up
-              </Link>
+              </Button>
             </VStack>
           </HStack>
         </div>
