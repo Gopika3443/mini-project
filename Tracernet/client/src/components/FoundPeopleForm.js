@@ -1,0 +1,90 @@
+import React, { useState } from 'react';
+import "./LostPeopleForm.css";
+
+const FoundPeopleForm = () => {
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+  const [gender, setGender] = useState("");
+  const [location, setLocation] = useState("");
+  const [description, setDescription] = useState("");
+
+  const handleSubmit = () => {
+    // Handle form submission logic here
+    console.log("Name:", name);
+    console.log("Age:", age);
+    console.log("Gender:", gender);
+    console.log("Location:", location);
+    console.log("Description:", description);
+    // Reset form fields
+    setName("");
+    setAge("");
+    setGender("");
+    setLocation("");
+    setDescription("");
+  };
+
+  return (
+    <div className="lostpage-container">
+      <div className="lost-contain">
+    <form className="lost-people-form">
+      <h2>Report Found Person</h2>
+      <div className="form-field">
+        <label htmlFor="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Enter name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </div>
+      <div className="form-field">
+        <label htmlFor="age">Age</label>
+        <input
+          type="number"
+          id="age"
+          placeholder="Enter age"
+          value={age}
+          onChange={(e) => setAge(e.target.value)}
+        />
+      </div>
+      <div className="form-field">
+        <label htmlFor="gender">Gender</label>
+        <select
+          id="gender"
+          value={gender}
+          onChange={(e) => setGender(e.target.value)}
+        >
+          <option value="">Select gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div className="form-field">
+        <label htmlFor="location">Location</label>
+        <input
+          type="text"
+          id="location"
+          placeholder="Enter location"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+        />
+      </div>
+      <div className="form-field">
+        <label htmlFor="description">Description</label>
+        <textarea
+          id="description"
+          placeholder="Enter description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+        ></textarea>
+      </div>
+      <button onClick={handleSubmit}>Submit</button>
+    </form>
+    </div>
+    </div>
+  );
+};
+
+export default FoundPeopleForm;

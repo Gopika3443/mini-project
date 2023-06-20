@@ -1,0 +1,70 @@
+/* HomePage.css */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+  }
+  
+  .background {
+    background-image: url("/public/art.avif"); /* Replace "your-image-url.jpg" with the actual image URL */
+    background-size: cover;
+    background-position: right;
+    margin-right: 0;
+  }
+  
+  .left-side {
+    width: 800px;
+    height: 100vh; /* Set the height to viewport height */
+    border-radius: 0 50% 50% 0;
+    background-color: #6c63ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: -200px; /* Adjust the value as per your preference */
+    margin-top: -40px; /* Adjust the value as per your preference */
+    margin-bottom: -40px; /* Adjust the value as per your preference */
+  }
+  
+  .heading {
+    color: rgb(65, 65, 65);
+    font-size: 88px;
+    font-weight:bolder;
+    text-align: center;
+    margin-bottom: 20px;
+    position: absolute; /* Position it relative to the left-side */
+    top: 20px; /* Adjust the value as per your preference */
+    left: 50%; /* Adjust the value as per your preference */
+    transform: translateX(-80%); /* Center the heading horizontally */
+    margin-top: 90px;
+}
+  
+  .right-side {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; /* Align content to the top-left */
+    position: absolute; /* Position it relative to the left-side */
+    top: 50%; /* Adjust the value as per your preference */
+    left: 20%; /* Adjust the value as per your preference */
+    transform: translate(-50%, -50%); /* Center the content */
+  }
+  
+  .text {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .button {
+    width: 100%;
+    margin-top: 10px;
+    background-color: #4c4949; /* Set the desired grey color */
+
+  }
+  .button:hover {
+    background-color: #302f2f;
+  }
+  

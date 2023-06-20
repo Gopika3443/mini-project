@@ -12,11 +12,19 @@ import {
   FormLabel,
   Input,
   ModalFooter,
+  useStyleConfig, // Import useStyleConfig hook
 } from "@chakra-ui/react";
+import Login from './Login';
+import SignUp from './SignUp';
 
 
 const Frontpage = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoginFormVisible, setIsLoginFormVisible] = useState(false);
+  const [isSignUpFormVisible, setIsSignUpFormVisible] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
 
   const handleOpenDialog = () => {
     setIsOpen(true);
@@ -25,22 +33,36 @@ const Frontpage = () => {
   const handleCloseDialog = () => {
     setIsOpen(false);
   };
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-  
-    const handleSignup = () => {
-      // Handle signup logic here
-      console.log("Username:", username);
-      console.log("Password:", password);
-      handleCloseModal(); // Close the modal
-    };
-    const handleOpenModal = () => {
-        setIsOpen(true);
-      };
-    
-      const handleCloseModal = () => {
-        setIsOpen(false);
-      };
+
+  const handleSignup = () => {
+    // Handle signup logic here
+    console.log("Username:", username);
+    console.log("Password:", password);
+    handleCloseDialog(); // Close the modal
+  };
+
+  const handleToggleLoginForm = () => {
+    setIsLoginFormVisible(!isLoginFormVisible);
+  };
+
+  const handleToggleSignUpForm = () => {
+    setIsSignUpFormVisible(!isSignUpFormVisible);
+  };
+
+  const handleLogin = () => {
+    // Handle login logic here
+    console.log("Username:", username);
+    console.log("Password:", password);
+    handleCloseDialog(); // Close the modal
+  };
+
+  const dialogStyles = useStyleConfig("Modal", { variant: "neumorphism" });
+  const customModalContentStyles = {
+    padding: "20px",
+    borderRadius: "10px",
+    boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+  };
+
 
   return (
     <div className="landing-page">
@@ -56,7 +78,7 @@ const Frontpage = () => {
             <li>Add Case</li>
             <li>Feedback</li>
             <li>
-              <Button onClick={handleOpenModal}>Get Started</Button>
+              <Button onClick={handleOpenDialog}>Get Started</Button>
             </li>
           </ul>
         </div>
@@ -66,47 +88,25 @@ const Frontpage = () => {
           <div className="info">
             <h1>TRACENET</h1>
             <p>The Elite Lost and Found - Lost Today, Found Tomorrow</p>
-            <Button onClick={handleOpenDialog}>Sign In</Button>
+            <Button onClick={handleOpenDialog}>Login</Button>
           </div>
           <div className="image">
             <img src="https://i.postimg.cc/65QxYYzh/001234.png" alt="Inspiration" />
           </div>
         </div>
       </div>
-      <Modal isOpen={isOpen} onClose={handleCloseModal}>
-      <ModalOverlay />
-      <ModalContent>
-        <ModalHeader>Sign Up</ModalHeader>
-        <ModalCloseButton />
-        <ModalBody>
-          <FormControl>
-            <FormLabel>Username</FormLabel>
-            <Input
-              placeholder="Enter your username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </FormControl>
-          <FormControl mt={4}>
-            <FormLabel>Password</FormLabel>
-            <Input
-              type="password"
-              placeholder="Enter your password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </FormControl>
-        </ModalBody>
-        <ModalFooter>
-          <Button colorScheme="blue" mr={3} onClick={handleSignup}>
-            Sign Up
-          </Button>
-          <Button variant="ghost" onClick={handleCloseModal}>
-            Cancel
-          </Button>
-        </ModalFooter>
-      </ModalContent>
-    </Modal>
+      <Modal isOpen={isOpen} onClose={handleCloseDialog}>
+    <ModalOverlay />
+    <ModalContent bg="transparent" boxShadow="none" borderRadius={0}>    
+    <ModalBody p={0}>
+      {isLoginFormVisible ? (
+        <Login />
+      ) : (
+        <SignUp />
+      )}
+    </ModalBody>
+    </ModalContent>
+  </Modal>
     </div>
   );
 };

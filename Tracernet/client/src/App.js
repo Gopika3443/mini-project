@@ -1,7 +1,13 @@
 import {BrowserRouter, Route, Routes}   from 'react-router-dom'
 import Frontpage from "./components/Frontpage";
 import { ChakraProvider } from '@chakra-ui/react';
-import ContactForm from "./components/ContactForm";
+import LostPeopleForm from './components/LostPeopleForm';
+import HomePage from './components/HomePage';
+import FeedBack from './components/FeedBack';
+import AboutUs from './components/AboutUs';
+import FoundPeopleForm from './components/FoundPeopleForm';
+import Login from './components/Login';
+import SignUp from './components/SignUp';
 
 function App() {
   return (
@@ -9,8 +15,18 @@ function App() {
 <BrowserRouter>
 <Routes>
   <Route path='/' element={<Frontpage/>}></Route>
-  <Route path='/ContactForm' element={<ContactForm/>}></Route>
-  
+  <Route path='/Lost' element={<LostPeopleForm/>}></Route>
+  <Route path='/Home' element={<HomePage/>}></Route>
+  <Route path='/Feed' element={<FeedBack/>}></Route>
+  <Route path='/About' element={<AboutUs/>}></Route>
+  <Route path='/Found' element={<FoundPeopleForm/>}></Route>
+  <Route path='/Login' element={<Login/>}></Route>
+  <Route path='/Signup' element={<SignUp/>}></Route>
+
+
+
+
+
 
 </Routes>
 </BrowserRouter>    
