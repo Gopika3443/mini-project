@@ -23,6 +23,9 @@ const SignUp = () => {
           return;
         }
     }
+    const handleLoggedIn=()=>{
+      window.localStorage.setItem("isLoggedIn",true)
+    }
 
   return (
     <VStack justifyContent={"center"} alignItems={"center"} h={"100vh"}>
@@ -51,7 +54,7 @@ const SignUp = () => {
     <HStack mt={"20px"} justifyContent={"flex-end"}>
         <VStack alignItems={"flex-end"}>
           <p >Already have an account?</p>
-        <Link color="blue.500" fontSize="sm">Login</Link>
+        <Button onClick={handleLoggedIn} color="blue.500" fontSize="sm">Login</Button>
         </VStack>
     </HStack>
   </div>

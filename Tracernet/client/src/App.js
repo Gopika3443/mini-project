@@ -20,8 +20,7 @@ function App() {
   <Route path='/Feed' element={<FeedBack/>}></Route>
   <Route path='/About' element={<AboutUs/>}></Route>
   <Route path='/Found' element={<FoundPeopleForm/>}></Route>
-  <Route path='/Login' element={<Login/>}></Route>
-  <Route path='/Signup' element={<SignUp/>}></Route>
+
 
 
 
