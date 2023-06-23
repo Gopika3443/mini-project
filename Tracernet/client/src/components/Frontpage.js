@@ -69,7 +69,7 @@ const Frontpage = () => {
   const handleSignup = async() => {
     console.log(signup)
     const res = await axios.post('https://tracenet.onrender.com/register',signup)
-    .then((res)=>console.log(res))
+    .then((res)=>navigate("/home"))
   }
 
   //api for login
