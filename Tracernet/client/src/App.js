@@ -8,6 +8,7 @@ import AboutUs from './components/AboutUs';
 import FoundPeopleForm from './components/FoundPeopleForm';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import MissingList from './components/MisiingList';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
   <Route path='/Found' element={<FoundPeopleForm/>}></Route>
   <Route path='/Login' element={<Login/>}></Route>
   <Route path='/Signup' element={<SignUp/>}></Route>
+  <Route path='/ListL' element={<MissingList/>}></Route>
+
 
 
 

@@ -37,7 +37,6 @@ const LostPeopleForm = () => {
         <form className="lost-people-form">
           <h2>Report Lost Person</h2>
           <div className="form-field">
-            <label htmlFor="name">Name</label>
             <input
               type="text"
               id="name"
@@ -47,7 +46,6 @@ const LostPeopleForm = () => {
             />
           </div>
           <div className="form-field">
-            <label htmlFor="age">Age</label>
             <input
               type="number"
               id="age"
@@ -57,7 +55,6 @@ const LostPeopleForm = () => {
             />
           </div>
           <div className="form-field">
-            <label htmlFor="gender">Gender</label>
             <select
               id="gender"
               value={gender}
@@ -70,7 +67,6 @@ const LostPeopleForm = () => {
             </select>
           </div>
           <div className="form-field">
-            <label htmlFor="location">Location</label>
             <input
               type="text"
               id="location"
@@ -80,7 +76,6 @@ const LostPeopleForm = () => {
             />
           </div>
           <div className="form-field">
-            <label htmlFor="description">Description</label>
             <textarea
               id="description"
               placeholder="Enter description"
@@ -88,15 +83,12 @@ const LostPeopleForm = () => {
               onChange={(e) => setDescription(e.target.value)}
             ></textarea>
           </div>
-          <div className="form-field">
-            <label htmlFor="image">Image</label>
             <input
               type="file"
               id="image"
               accept="image/*"
               onChange={handleImageUpload}
             />
-          </div>
           <button onClick={handleSubmit}>Submit</button>
         </form>
       </div>

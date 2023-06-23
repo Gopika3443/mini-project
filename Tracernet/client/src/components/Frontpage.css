@@ -111,8 +111,6 @@ ul {
 .landing-page header .links li:last-child {
   border-radius: 20px;
   padding: 10px 20px;
-  color: #FFF;
-  background-color: #6c63ff;
 }
 
 .landing-page header .links li:not(:last-child):hover {
@@ -123,7 +121,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 140px;
+  gap: 150px;
 }
 
 @media (max-width: 767px) {

@@ -7,6 +7,8 @@ const FoundPeopleForm = () => {
   const [gender, setGender] = useState("");
   const [location, setLocation] = useState("");
   const [description, setDescription] = useState("");
+  const [image, setImage] = useState(null); // State for storing the uploaded image
+
 
   const handleSubmit = () => {
     // Handle form submission logic here
@@ -15,12 +17,20 @@ const FoundPeopleForm = () => {
     console.log("Gender:", gender);
     console.log("Location:", location);
     console.log("Description:", description);
+    console.log("Image:", image);
     // Reset form fields
     setName("");
     setAge("");
     setGender("");
     setLocation("");
     setDescription("");
+    setImage(null);
+
+  };
+
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    setImage(file);
   };
 
   return (
@@ -29,7 +39,6 @@ const FoundPeopleForm = () => {
     <form className="lost-people-form">
       <h2>Report Found Person</h2>
       <div className="form-field">
-        <label htmlFor="name">Name</label>
         <input
           type="text"
           id="name"
@@ -39,7 +48,6 @@ const FoundPeopleForm = () => {
         />
       </div>
       <div className="form-field">
-        <label htmlFor="age">Age</label>
         <input
           type="number"
           id="age"
@@ -49,7 +57,6 @@ const FoundPeopleForm = () => {
         />
       </div>
       <div className="form-field">
-        <label htmlFor="gender">Gender</label>
         <select
           id="gender"
           value={gender}
@@ -62,7 +69,6 @@ const FoundPeopleForm = () => {
         </select>
       </div>
       <div className="form-field">
-        <label htmlFor="location">Location</label>
         <input
           type="text"
           id="location"
@@ -72,7 +78,6 @@ const FoundPeopleForm = () => {
         />
       </div>
       <div className="form-field">
-        <label htmlFor="description">Description</label>
         <textarea
           id="description"
           placeholder="Enter description"
@@ -80,6 +85,15 @@ const FoundPeopleForm = () => {
           onChange={(e) => setDescription(e.target.value)}
         ></textarea>
       </div>
+      <div className="form-field">
+            <input
+              type="file"
+              placeholder="upload image"
+              id="image"
+              accept="image/*"
+              onChange={handleImageUpload}
+            />
+          </div>
       <button onClick={handleSubmit}>Submit</button>
     </form>
     </div>
