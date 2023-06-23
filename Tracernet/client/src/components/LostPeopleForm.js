@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './LostPeopleForm.css';
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 const LostPeopleForm = () => {
+  const navigate = useNavigate()
   const [lostData , setLostData] = useState({
     name:"",
     age:'',
@@ -31,7 +33,8 @@ const LostPeopleForm = () => {
        formData.append('contact', lostData.contact);
 
        try {
-        const res = await axios.post('https://tracenet.onrender.com/upload', formData);
+        const res = await axios.post('https://tracenet.onrender.com/upload', formData)
+         .then((res) => navigate('/ListL'))
         // Handle success
         console.log('Upload successful:', res.data);
       } catch (error) {
@@ -104,7 +107,8 @@ const LostPeopleForm = () => {
                 id="description"
                 placeholder="Enter description"
                 name='description'
-                
+                onChange={handleFormChange}
+
               ></textarea>
             </div>
             <div className="form-field">

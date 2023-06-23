@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Flex, Heading, Image, Text, VStack } from '@chakra-ui/react';
 import axios from 'axios';
+import './MissingList.css';
 
 function MissingPeoplePage() {
   const [lost, setLost] = useState([]);
@@ -9,14 +10,16 @@ function MissingPeoplePage() {
     const fetchLostData = async () => {
       try {
         const response = await axios.get('https://tracenet.onrender.com/getLostData');
-        setLost(response.data.message);
+        if (response) {
+          setLost(response.data.lostdata);
+        }
       } catch (error) {
         console.log(error);
       }
     };
 
     fetchLostData();
-  }, [lost]);
+  }, []);
 
   return (
     <div>
@@ -37,54 +40,45 @@ function MissingPeoplePage() {
 
       {/* Content */}
       <Box p={8}>
-        <Heading as="h2" fontSize="2xl" mb={4}>
-          Missing People
-        </Heading>
-        <VStack spacing={4} align="start">
-          {lost.map((person) => {
+      <Heading as="h2" fontSize="2xl" mb={4}>
+        Missing People
+      </Heading>
+      <div className="newspaper-container">
+        {lost &&
+          lost.map((person) => {
             const base64String = btoa(
               String.fromCharCode(...new Uint8Array(person.img.data.data))
             );
 
             return (
-              <Flex
-                key={person._id}
-                bg="gray.100"
-                p={4}
-                borderRadius="md"
-                alignItems="center"
-                _hover={{ backgroundColor: 'gray.200' }}
-              >
+              <Box key={person._id} className="newspaper-card">
                 <Image
                   src={`data:image/png;base64,${base64String}`}
                   alt={person.name}
-                  boxSize="100px"
-                  objectFit="cover"
-                  mr={4}
                 />
-                <VStack align="start" spacing={2}>
-                  <Text fontSize="xl" fontWeight="bold">
+                <div className="newspaper-card-content">
+                  <Heading as="h3" fontSize="xl" fontWeight="bold" mb={2}>
                     {person.name}
-                  </Text>
-                  <Text>
+                  </Heading>
+                  <Text fontSize="lg">
                     <strong>Age:</strong> {person.age}
                   </Text>
-                  <Text>
+                  <Text fontSize="lg">
                     <strong>Gender:</strong> {person.gender}
                   </Text>
-                  <Text>
+                  <Text fontSize="lg">
                     <strong>Location:</strong> {person.location}
                   </Text>
-                  <Text>
+                  <Text fontSize="lg">
                     <strong>Description:</strong> {person.description}
                   </Text>
-                </VStack>
-              </Flex>
+                </div>
+              </Box>
             );
           })}
-        </VStack>
-      </Box>
-    </div>
+      </div>
+    </Box>
+  </div>
   );
 }
 
