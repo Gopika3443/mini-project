@@ -21,9 +21,12 @@ function App() {
   <Route path='/Feed' element={<FeedBack/>}></Route>
   <Route path='/About' element={<AboutUs/>}></Route>
   <Route path='/Found' element={<FoundPeopleForm/>}></Route>
+<<<<<<< HEAD
   <Route path='/Login' element={<Login/>}></Route>
   <Route path='/Signup' element={<SignUp/>}></Route>
   <Route path='/ListL' element={<MissingList/>}></Route>
+=======
+>>>>>>> 59484b3239164ba261e1ca2ab18432cb8e4e7ece
 
 
 

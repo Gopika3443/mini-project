@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Frontpage.css";
 import {
   Button,
@@ -20,11 +20,16 @@ import SignUp from './SignUp';
 
 const Frontpage = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isLoginFormVisible, setIsLoginFormVisible] = useState(false);
-  const [isSignUpFormVisible, setIsSignUpFormVisible] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  const [isLoggedIn,setIsLoggedIn]= useState(window.localStorage.getItem("isLoggedIn"))
+  
+  
+  useEffect(() => {
+    setIsLoggedIn(window.localStorage.getItem("isLoggedIn"))
+    console.log(isLoggedIn)
+  }, []);
+  
 
   const handleOpenDialog = () => {
     setIsOpen(true);
@@ -39,14 +44,6 @@ const Frontpage = () => {
     console.log("Username:", username);
     console.log("Password:", password);
     handleCloseDialog(); // Close the modal
-  };
-
-  const handleToggleLoginForm = () => {
-    setIsLoginFormVisible(!isLoginFormVisible);
-  };
-
-  const handleToggleSignUpForm = () => {
-    setIsSignUpFormVisible(!isSignUpFormVisible);
   };
 
   const handleLogin = () => {
@@ -99,7 +96,7 @@ const Frontpage = () => {
     <ModalOverlay />
     <ModalContent bg="transparent" boxShadow="none" borderRadius={0}>    
     <ModalBody p={0}>
-      {isLoginFormVisible ? (
+      {isLoggedIn ? (
         <Login />
       ) : (
         <SignUp />
