@@ -18,12 +18,26 @@ const LostPeopleForm = () => {
     const file = e.target.files[0];
     setImage(file);
   };
-  const handleSubmit=async(e)=>{
+  const handleSubmit = async(e)=>{
        e.preventDefault()
          
-     const res = await axios.post("https://tracenet.onrender.com/upload",lostData)
-     .then((res)=>console.log(res))
+       const formData = new FormData();
+       formData.append('testImage', image);
+       formData.append('name', lostData.name);
+       formData.append('age', lostData.age);
+       formData.append('gender', lostData.gender);
+       formData.append('description', lostData.description);
+       formData.append('location', lostData.location);
+       formData.append('contact', lostData.contact);
 
+       try {
+        const res = await axios.post('https://tracenet.onrender.com/upload', formData);
+        // Handle success
+        console.log('Upload successful:', res.data);
+      } catch (error) {
+        // Handle error
+        console.error('Error uploading image:', error);
+      }
 
   }
   const handleFormChange=(e)=>{
