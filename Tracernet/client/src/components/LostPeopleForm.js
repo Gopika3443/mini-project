@@ -1,37 +1,38 @@
 import React, { useState } from 'react';
 import './LostPeopleForm.css';
+import axios from 'axios'
 
 const LostPeopleForm = () => {
-  const [name, setName] = useState('');
-  const [age, setAge] = useState('');
-  const [gender, setGender] = useState('');
-  const [location, setLocation] = useState('');
-  const [description, setDescription] = useState('');
-  const [image, setImage] = useState(null); // State for storing the uploaded image
+  const [lostData , setLostData] = useState({
+    name:"",
+    age:'',
+    gender:'',
+    description:'',
+    location:'',
+    contact:'',
+  })
+  const [image,setImage]=useState(null)
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log('Name:', name);
-    console.log('Age:', age);
-    console.log('Gender:', gender);
-    console.log('Location:', location);
-    console.log('Description:', description);
-    console.log('Image:', image);
-    // Reset form fields
-    setName('');
-    setAge('');
-    setGender('');
-    setLocation('');
-    setDescription('');
-    setImage(null);
-  };
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     setImage(file);
   };
+  const handleSubmit=async(e)=>{
+       e.preventDefault()
+         
+     const res = await axios.post("https://tracenet.onrender.com/upload",lostData)
+     .then((res)=>console.log(res))
 
+
+  }
+  const handleFormChange=(e)=>{
+    setLostData({
+      ...lostData,
+      [e.target.name]:e.target.value
+    })
+    console.log(lostData)
+  }
   return (
     <div className="lostpage-container">
       <div className="lost-contain">
@@ -49,25 +50,25 @@ const LostPeopleForm = () => {
               <input
                 type="text"
                 id="name"
+                name='name'
                 placeholder="Enter name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                onChange={handleFormChange}
               />
             </div>
             <div className="form-field">
               <input
                 type="number"
                 id="age"
+                name='age'
                 placeholder="Enter age"
-                value={age}
-                onChange={(e) => setAge(e.target.value)}
+                onChange={handleFormChange}
               />
             </div>
             <div className="form-field">
               <select
                 id="gender"
-                value={gender}
-                onChange={(e) => setGender(e.target.value)}
+                name='gender'
+                onChange={handleFormChange}
               >
                 <option value="">Select gender</option>
                 <option value="male">Male</option>
@@ -79,17 +80,17 @@ const LostPeopleForm = () => {
               <input
                 type="text"
                 id="location"
+                name='location'
                 placeholder="Enter location"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
+                onChange={handleFormChange}
               />
             </div>
             <div className="form-field">
               <textarea
                 id="description"
                 placeholder="Enter description"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
+                name='description'
+                
               ></textarea>
             </div>
             <div className="form-field">
