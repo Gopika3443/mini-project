@@ -40,45 +40,52 @@ function MissingPeoplePage() {
 
       {/* Content */}
       <Box p={8}>
-      <Heading as="h2" fontSize="2xl" mb={4}>
-        Missing People
-      </Heading>
-      <div className="newspaper-container">
-        {lost &&
-          lost.map((person) => {
-            const base64String = btoa(
-              String.fromCharCode(...new Uint8Array(person.img.data.data))
-            );
+        <Heading as="h2" fontSize="2xl" mb={4}>
+          Missing People
+        </Heading>
+        <div className="newspaper-container">
+          {lost &&
+            lost.map((person) => {
+              const imageData = person.img.data.data;
+              let base64String = '';
 
-            return (
-              <Box key={person._id} className="newspaper-card">
-                <Image
-                  src={`data:image/png;base64,${base64String}`}
-                  alt={person.name}
-                />
-                <div className="newspaper-card-content">
-                  <Heading as="h3" fontSize="xl" fontWeight="bold" mb={2}>
-                    {person.name}
-                  </Heading>
-                  <Text fontSize="lg">
-                    <strong>Age:</strong> {person.age}
-                  </Text>
-                  <Text fontSize="lg">
-                    <strong>Gender:</strong> {person.gender}
-                  </Text>
-                  <Text fontSize="lg">
-                    <strong>Location:</strong> {person.location}
-                  </Text>
-                  <Text fontSize="lg">
-                    <strong>Description:</strong> {person.description}
-                  </Text>
-                </div>
-              </Box>
-            );
-          })}
-      </div>
-    </Box>
-  </div>
+              for (let i = 0; i < imageData.length; i++) {
+                base64String += String.fromCharCode(imageData[i]);
+              }
+
+              const encodedString = btoa(base64String);
+
+
+
+              return (
+                <Box key={person._id} className="newspaper-card">
+                  <Image
+                    src={`data:image/png;base64,${encodedString}`}
+                    alt={person.name}
+                  />
+                  <div className="newspaper-card-content">
+                    <Heading as="h3" fontSize="xl" fontWeight="bold" mb={2}>
+                      {person.name}
+                    </Heading>
+                    <Text fontSize="lg">
+                      <strong>Age:</strong> {person.age}
+                    </Text>
+                    <Text fontSize="lg">
+                      <strong>Gender:</strong> {person.gender}
+                    </Text>
+                    <Text fontSize="lg">
+                      <strong>Location:</strong> {person.location}
+                    </Text>
+                    <Text fontSize="lg">
+                      <strong>Description:</strong> {person.description}
+                    </Text>
+                  </div>
+                </Box>
+              );
+            })}
+        </div>
+      </Box>
+    </div>
   );
 }
 
