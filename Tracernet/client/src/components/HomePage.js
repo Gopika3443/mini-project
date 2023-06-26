@@ -21,9 +21,7 @@ const HomePage = () => {
         </div>
       </div>
       <div className='right'>
-        <a href="https://imgbb.com/">
-          <img src="https://i.ibb.co/cvSXtXd/rag-doll-sitting-large-question-mark-removebg-preview.png" alt="rag-doll-sitting-large-question-mark-removebg-preview" border="0" />
-        </a>
+      <a href="https://imgbb.com/"><img src="https://i.ibb.co/w607Jrx/rag-dolls-one-red-removebg-preview.png" alt="rag-dolls-one-red-removebg-preview" border="0"/></a>
       </div>
     </div>
   );
