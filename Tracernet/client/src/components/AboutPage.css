@@ -20,19 +20,21 @@
       }
     }
   }
-  
-  .ImageContainer {
-    max-width: 80%;
+  .FlexContainer {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 0 auto; /* Add this line to horizontally center the container */
   }
   
-  .AboutImage {
-    max-width: 80%; /* Adjust the width as needed */
-    height: auto;
+  .FlexContainer .Text {
+    flex: 1;
   }
+  
+  .FlexContainer .ImageContainer {
+    margin-left: 20px; /* Adjust the margin as per your preference */
+  }
+  
+  
+
   
   .Text {
     display: flex;

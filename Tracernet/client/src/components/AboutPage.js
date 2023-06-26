@@ -5,24 +5,27 @@ const AboutPage = () => {
   return (
     <div>
       <div className="Scrollabout" id="about">
-        <h2 className="Abouth2">About Us</h2>
-        <div className="Text">
-          <p>
-            Tracenet is a website that aims to help people find lost items and reunite them with their owners.
-            It provides a platform where users can post information about lost items, such as descriptions, photos, and contact details.
-            This allows individuals who have found lost items to easily connect with the rightful owners and arrange for their return.
-            The website features a user-friendly interface that allows users to search for lost items based on various criteria, such as location, category, or keywords.
-            It also provides a feature for users to post details about items they have found, increasing the chances of successful reunions.
-            Tracenet promotes community engagement and cooperation by enabling users to communicate and coordinate directly through the platform.
-            It also offers additional functionalities such as user profiles, where individuals can manage their lost and found listings, and a notification system to receive updates on matched items.
-            The goal of Tracenet is to simplify the process of finding and returning lost items, leveraging the power of technology and online connectivity to connect people who have lost items with those who have found them.
-            By providing a centralized platform for lost and found listings, Tracenet aims to increase the efficiency and effectiveness of reuniting lost items with their owners, ultimately fostering a sense of trust and community among its users.
-          </p>
+      <h2 className="Abouth2">About Us</h2>
+        <div className="FlexContainer">
+          <div className="Text">
+            <p>
+              Tracenet is a website that aims to help people find lost people and reunite them with their loved ones.
+              It provides a platform where users can post information about lost person, such as descriptions, photos, and contact details.
+              This allows individuals who have found lost people to easily connect with their loved ones.
+              The website features a user-friendly interface that allows users to search for lost people based on various criteria, such as location, identification mark, gender, age, etc.
+              It also provides a feature for users to post details about people they have found, increasing the chances of successful reunions.
+              Tracenet promotes community engagement and cooperation by enabling users to communicate and coordinate directly through the platform.
+              It also offers additional functionalities such as user profiles, where individuals can manage their lost and found listings, and a notification system to receive updates on matched items.
+              The goal of Tracenet is to simplify the process of finding and returning lost people, leveraging the power of technology and online connectivity to connect people who have lost people with those who have found them.
+              By providing a centralized platform for lost and found listings, Tracenet aims to increase the efficiency and effectiveness of reuniting lost people, ultimately fostering a sense of trust and community among its users.
+            </p>
+          </div>
+          <div className="ImageContainer">
+            <a href="https://imgbb.com/">
+              <img src="https://i.ibb.co/Lp6cWQf/hand-holding-red-icon-removebg-preview.png" alt="hand-holding-red-icon-removebg-preview" border="0" />
+            </a>
+          </div>
         </div>
-        <div className="ImageContainer">
-          <img src="greysd.jpeg" alt="About Us Image" className="AboutImage" />
-        </div>
-
         <h3 className="SubHeading">Our Mission</h3>
         <div className="Text">
           <p>
