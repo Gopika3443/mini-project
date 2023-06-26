@@ -194,4 +194,46 @@
   ul.social-icons li:last-child {
     margin-right: 0;
   }
+  .footer {
+    background-color: rgb(85, 37, 37); /* Red background color */
+    color: #ffffff; /* Black text color */
+    padding: 20px;
+  }
   
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .icon {
+    color: #fff; /* White icon color */
+    font-size: 20px;
+  }
+  
+  .team-members ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .team-members li {
+    margin-bottom: 5px;
+  }
+  
+  .contact-email a {
+    color: #fff; /* White link color */
+    text-decoration: none;
+  }
+  
+  .contact-email a:hover {
+    text-decoration: underline;
+  }
+  .Text{
+    text-align: center;
+  }

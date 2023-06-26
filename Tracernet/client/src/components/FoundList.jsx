@@ -12,7 +12,7 @@ function FoundList() {
   useEffect(() => {
     const fetchLostData = async () => {
       try {
-        const response = await axios.get('https://tracenet.onrender.com/getLostData');
+        const response = await axios.get('https://tracenet.onrender.com/getFoundData');
         if (response) {
           setLost(response.data.lostdata);
         }

@@ -17,7 +17,7 @@ const HomePage = () => {
           <Text fontSize="xl" className="text">Have you lost someone? Click the button below to report a lost person.</Text>
           <Button as={Link} to="/Lost" className="button">Report Lost</Button>
           <Text fontSize="xl" className="text">Have you found someone? Click the button below to report a found person.</Text>
-          <Button className="button">Report Found</Button>
+          <Button as={Link} to="/Lost" className="button">Report Found</Button>
         </div>
       </div>
       <div className='right'>
