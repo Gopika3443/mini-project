@@ -94,7 +94,7 @@ const Frontpage = () => {
   return (
     <div className="landing-page">
       <header>
-        <div className="container">
+        <div className="container1">
           <div className="logo-container">
             <img src="tracenetlogo.jpg" className="logosize" alt="Logo" />
             <a href="#" className="logo">Tracenet</a>

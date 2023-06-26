@@ -11,7 +11,10 @@ body {
   
 }
 
-
+.info Button {
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(11,27,27,1) 0%, rgba(247,7,7,1) 0%);
+}
 a {
   text-decoration: none;
 }
@@ -28,15 +31,31 @@ ul {
   margin: 0;
 }
 .landing-page{
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(71,35,138,0.8547794117647058) 82%);
-  color: #fff;
+ background-color:  #E0E5EC;
   font-family: 'Poppins', sans-serif;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   gap: 15vh;
 
+}
+
+header{
+  color:black
+}
+.container1 {
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  height: 100px;
+  margin-left: auto;
+  background-color: #E0E5EC;
+  box-shadow: 9px 9px 16px rgba(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+  margin-right: auto;
+  width: 100%; /* Set container width to 100% */
+  max-width: 90%; /* Set a maximum width if needed */
 }
 .container {
   padding-left: 15px;
@@ -46,6 +65,7 @@ ul {
   width: 80%; /* Set container width to 100% */
   max-width: 90%; /* Set a maximum width if needed */
 }
+
 
 .logo-container {
   display: flex;
@@ -93,7 +113,7 @@ ul {
 }
 
 .landing-page header .logo {
-  color: #ffffff;
+  color: #000000;
   font-style: normal;
   font-size: 30px;
 }
@@ -107,6 +127,8 @@ ul {
 
 .landing-page header .links {
   display: flex;
+  font-weight: 700;
+
   align-items: center;
 }
 
@@ -119,7 +141,8 @@ ul {
 
 .landing-page header .links li {
   margin-left: 30px;
-  color: #ffffff;
+  font-weight: 700;
+  color: #000000;
   cursor: pointer;
   transition: .3s;
 }
@@ -162,7 +185,7 @@ ul {
 }
 
 .landing-page .content .info h1 {
-  color: #ffffff;
+  color: #000000;
   font-size: 44px;
 }
 
@@ -170,7 +193,7 @@ ul {
   margin: 0;
   line-height: 1.6;
   font-size: 15px;
-  color: #ffffff;
+  color: #000000;
 }
 
 .landing-page .content .info button {
