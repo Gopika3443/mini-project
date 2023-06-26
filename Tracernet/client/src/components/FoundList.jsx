@@ -14,7 +14,7 @@ function FoundList() {
       try {
         const response = await axios.get('https://tracenet.onrender.com/getFoundData');
         if (response) {
-          setLost(response.data.lostdata);
+          setLost(response.data.founddata);
         }
       } catch (error) {
         console.log(error);
