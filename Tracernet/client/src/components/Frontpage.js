@@ -113,7 +113,7 @@ const Frontpage = () => {
           <ul className="links">
           <Link href="/Cases" style={{ textDecoration: 'none' }}>Cases</Link>
             <li>About Us</li>
-          {isLoggedIn &&  <Link style={{ textDecoration: 'none' }} ml={2} href='/addCase'>Add Case</Link>}
+          {isLoggedIn &&  <Link style={{ textDecoration: 'none' }} ml={2} href='/Home'>Add Case</Link>}
             <li>Feedback</li>
             <li>
               <Button onClick={handleOpenDialog}>Get Started</Button>
