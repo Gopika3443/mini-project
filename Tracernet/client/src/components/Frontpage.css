@@ -88,7 +88,7 @@ header{
 
 /* Start Landing Page */
 .landing-page header {
-  min-height: 80px;
+  height: 80px;
   display: flex;
 }
 
@@ -437,7 +437,7 @@ header{
 .Abouth2 {
   font-size: 35px;
   font-weight: bolder;
-  color: #6c63ff;
+  color: rgba(247,7,7,1);
   font-family: sans-serif;
   padding: 10px;
   margin-left: 80px;
@@ -447,7 +447,7 @@ header{
 .SubHeading{
   font-size: 25px;
   font-weight: bold;
-  color: #6c63ff;
+  color: rgba(247,7,7,1);
   font-family: sans-serif;
   padding: 10px;
   margin-left: 80px;
