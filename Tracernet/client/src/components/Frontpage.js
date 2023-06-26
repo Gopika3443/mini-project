@@ -79,7 +79,7 @@ const Frontpage = () => {
     console.log(signup)
     const res = await axios.post('https://tracenet.onrender.com/register',signup)
     .then((res)=>window.localStorage.setItem("LoggedIn",true))
-    .then((res)=>navigate("/Cases"))
+    .then((res)=>navigate("/Home"))
   }
 
   //api for login
@@ -96,7 +96,7 @@ const Frontpage = () => {
 
     const res = await axios.post("https://tracenet.onrender.com/login",login)
     .then((res)=>window.localStorage.setItem("LoggedIn",true))
-    .then((res)=>navigate("/home"))
+    .then((res)=>navigate("/Home"))
     
 
   }
