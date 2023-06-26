@@ -1,6 +1,7 @@
 import React from 'react';
 import "./AboutPage.css";
 import FeedBack from './FeedBack';
+import Footer from './Footer';
 
 const AboutPage = () => {
   return (
@@ -17,8 +18,7 @@ const AboutPage = () => {
               It also provides a feature for users to post details about people they have found, increasing the chances of successful reunions.
               Tracenet promotes community engagement and cooperation by enabling users to communicate and coordinate directly through the platform.
               It also offers additional functionalities such as user profiles, where individuals can manage their lost and found listings, and a notification system to receive updates on matched items.
-              The goal of Tracenet is to simplify the process of finding and returning lost people, leveraging the power of technology and online connectivity to connect people who have lost people with those who have found them.
-              By providing a centralized platform for lost and found listings, Tracenet aims to increase the efficiency and effectiveness of reuniting lost people, ultimately fostering a sense of trust and community among its users.
+              
             </p>
           </div>
           <div className="ImageContainer">
@@ -29,8 +29,7 @@ const AboutPage = () => {
         <div className="Flex2Container">
 
           <div className="Image1Container">
-            <a href="https://imgbb.com/"><img src="https://i.ibb.co/WBnL7xY/bg7.png" alt="bg7" border="0" /></a>
-            {/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/XSRdL6Z/bg5.png" alt="bg5" border="0"/></a> */}
+            <a href="https://imgbb.com/"><img src="https://i.ibb.co/dL96ZMg/bg6.png" alt="bg6" border="0" /></a>
           </div>
           <p>
             At Tracenet, we are committed to:
@@ -38,6 +37,9 @@ const AboutPage = () => {
             Providing a centralized database of information about missing persons to aid concerned parties, authorities, and the general public.
             Facilitating collaboration and information sharing to increase the chances of locating missing persons.
             Offering a user-friendly interface and advanced search algorithms to optimize the search process.
+            Tracenet promotes community engagement and cooperation by enabling users to communicate and coordinate directly through the platform.
+            It also offers additional functionalities such as user profiles, where individuals can manage their lost and found listings, and a notification system to receive updates on matched items.
+            The goal of Tracenet is to simplify the process of finding and returning lost people, leveraging the power of technology and online connectivity to connect people who have lost people with those who have found them.
           </p>
         </div>
 
@@ -61,17 +63,17 @@ const AboutPage = () => {
 
         <h3 className="SubHeading">How Tracenet Works?</h3>
         <div className="Flex2Container">
-         
-            <div className="Image3Container">
 
-              <a href="https://imgbb.com/"><img src="https://i.ibb.co/CQF6C9z/bg4.png" alt="bg4" border="0" /></a>
-            </div>
-            <p>
+          <div className="Image3Container">
+
+            <a href="https://imgbb.com/"><img src="https://i.ibb.co/CQF6C9z/bg4.png" alt="bg4" border="0" /></a>
+          </div>
+          <p>
             Tracenet provides a user-friendly platform where individuals can report cases of missing persons and share relevant information.
             Users can create profiles, upload photos, and provide detailed descriptions of missing individuals.
             Our system employs advanced search algorithms and matching techniques to compare reported missing persons with any found individuals or potential matches.
             Tracenet aims to connect people and provide a platform for communication and coordination between users, law enforcement agencies, and relevant organizations.
-            </p>
+          </p>
 
         </div>
 
@@ -81,56 +83,28 @@ const AboutPage = () => {
             We invite you to join Tracenet and become part of a community dedicated to reuniting families and bringing hope to those in need.
             Together, we can make a difference and contribute to the search for missing individuals.
             Feel free to customize this text according to your specific project requirements, tone, and objectives.
-            </p>
-            <div className="Image3Container">
-              <a href="https://imgbb.com/"><img src="https://i.ibb.co/dL96ZMg/bg6.png" alt="bg6" border="0" /></a>
-            </div>
-         
+          </p>
+          <div className="Image3Container">
+          <a href="https://imgbb.com/"><img src="https://i.ibb.co/WBnL7xY/bg7.png" alt="bg7" border="0" /></a>
+          </div>
+
         </div>
       </div>
       <h2 className="Abouth2">Feedback</h2>
       <div className="feedback">
         <div className='c1'>
-              <a href="https://imgbb.com/"><img src="https://i.ibb.co/whCwh06/bg2.png" alt="bg2" border="0" /></a>
-              </div>
+          <a href="https://imgbb.com/"><img src="https://i.ibb.co/whCwh06/bg2.png" alt="bg2" border="0" /></a>
+        </div>
         <div className='c2'>
-         
+
           <FeedBack></FeedBack>
         </div>
       </div>
 
       <h2 className="Abouth2">Contact Us</h2>
-      <footer id="contact">
-        <div className="bottom">
-          <ul className="social-icons">
-            <li>
-              <a href="#">
-                <i className="fab fa-facebook"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fab fa-instagram"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fab fa-google"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fab fa-github"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fab fa-twitter"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </footer>
+      <Footer></Footer>
+
+
     </div>
   );
 };
