@@ -6,6 +6,7 @@ import HomePage from './components/HomePage';
 import FeedBack from './components/FeedBack';
 import FoundPeopleForm from './components/FoundPeopleForm';
 import MissingList from './components/MisiingList';
+import FoundList from './components/FoundList';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/Found' element={<FoundPeopleForm />}></Route>
           <Route path='/Cases' element={<MissingList />}></Route>
           <Route path='/Lost' element={<LostPeopleForm />}></Route>
+          <Route path="/FoundL" element={<FoundList/>}></Route>
 
 
 
