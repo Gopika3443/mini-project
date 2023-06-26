@@ -11,9 +11,9 @@ const FeedBack = () => {
           <form className="feedback-form">
             <input type="email" placeholder="Email" className="input-field" required />
             <textarea placeholder="Message" className="textarea-field" rows={5} required />
+            <button type="submit" className="submit-button">Submit</button>
           </form>
-        </section>
-        <button type="submit" className="submit-button">Submit</button>
+        </section>        
       </div>
     </div>
   );
