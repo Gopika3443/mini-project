@@ -18,6 +18,7 @@ function App() {
           <Route path='/Feed' element={<FeedBack />}></Route>
           <Route path='/Found' element={<FoundPeopleForm />}></Route>
           <Route path='/Cases' element={<MissingList />}></Route>
+          <Route path='/Lost' element={<LostPeopleForm />}></Route>
 
 
 
