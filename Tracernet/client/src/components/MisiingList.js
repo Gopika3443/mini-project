@@ -36,7 +36,7 @@ function MissingPeoplePage() {
   return (
     <div>
       {/* Navigation Bar */}
-      <Flex as="nav" p={4} className="bg" color="white" alignItems="center">
+      <Flex as="nav" p={4} className="bg" color="black" alignItems="center">
         <Image src="/tracenetlogo.jpg" boxSize="35px" mr={2} />
         <Heading as="h1" fontSize="xl" fontWeight="bold">
           Tracenet
