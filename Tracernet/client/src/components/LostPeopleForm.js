@@ -80,7 +80,7 @@ const LostPeopleForm = () => {
       <div className="lost-contain">
         <div className="form-container">
           <form className="lost-people-form" onSubmit={handleSubmit}>
-            <h2>{isFoundData ? 'Report Found Person' : 'Report Lost Person'}</h2>
+            <h2>{isFoundData ? 'Report Lost Person' : 'Report Found Person'}</h2>
             <div className="form-field">
               <input
                 type="text"
