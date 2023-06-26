@@ -3,6 +3,7 @@ import { Box, Flex, Heading, Image, Text, VStack } from '@chakra-ui/react';
 import axios from 'axios';
 import { FaSearch } from 'react-icons/fa';
 import './MissingList.css';
+import { Link } from 'react-router-dom';
 
 function FoundList() {
   const [lost, setLost] = useState([]);
@@ -35,7 +36,7 @@ function FoundList() {
   return (
     <div>
       {/* Navigation Bar */}
-      <Flex as="nav" p={4} bg="blue.500" color="white" alignItems="center">
+      <Flex as="nav" p={4} className="bg" color="white" alignItems="center">
         <Image src="/tracelogo.jpg" boxSize="35px" mr={2} />
         <Heading as="h1" fontSize="xl" fontWeight="bold">
           Tracenet
@@ -43,9 +44,11 @@ function FoundList() {
         <Flex ml="auto" alignItems="center">
           {/* Add your login, add case, and found list links here */}
           <Text mr={4} _hover={{ textDecoration: 'underline' }}>
-            Add Case
+          <Link to="/Home">Add Case</Link>
           </Text>
-          <Text _hover={{ textDecoration: 'underline' }}>Found List</Text>
+          <Text _hover={{ textDecoration: 'underline' }}>
+          <Link to="/Cases">Missing List</Link>
+            </Text>
         </Flex>
       </Flex>
 
@@ -67,7 +70,7 @@ function FoundList() {
               width: '300px',
             }}
           />
-          <button
+          <button className="bg"
             style={{
               padding: '8px 16px',
               fontSize: '16px',
@@ -79,7 +82,7 @@ function FoundList() {
               alignItems: 'center',
             }}
           >
-            <FaSearch style={{ marginRight: '4px' }} />
+            <FaSearch  style={{ marginRight: '4px' }} />
             Search
           </button>
         </Flex>
