@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Flex, Heading, Image, Text, VStack } from '@chakra-ui/react';
 import axios from 'axios';
+import { FaSearch } from 'react-icons/fa';
 import './MissingList.css';
 
 function MissingPeoplePage() {
   const [lost, setLost] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const fetchLostData = async () => {
@@ -20,6 +22,15 @@ function MissingPeoplePage() {
 
     fetchLostData();
   }, []);
+
+  const filteredLost = lost.filter((person) => {
+    const name = person.name.toLowerCase();
+    return name.includes(searchQuery.toLowerCase());
+  });
+
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value);
+  };
 
   return (
     <div>
@@ -40,49 +51,77 @@ function MissingPeoplePage() {
 
       {/* Content */}
       <Box p={8}>
-        <Heading as="h2" fontSize="2xl" mb={4}>
-          Missing People
-        </Heading>
+        {/* Search Bar */}
+        <Flex mb={4}>
+          <input
+            type="text"
+            placeholder="Search by name..."
+            value={searchQuery}
+            onChange={handleSearch}
+            style={{
+              padding: '8px',
+              fontSize: '16px',
+              borderRadius: '4px',
+              border: '1px solid #ccc',
+              marginRight: '8px',
+              width: '300px',
+            }}
+          />
+          <button
+            style={{
+              padding: '8px 16px',
+              fontSize: '16px',
+              borderRadius: '4px',
+              border: 'none',
+              backgroundColor: '#007bff',
+              color: '#fff',
+              display: 'flex',
+              alignItems: 'center',
+            }}
+          >
+            <FaSearch style={{ marginRight: '4px' }} />
+            Search
+          </button>
+        </Flex>
+
+        {/* Missing People List */}
         <div className="newspaper-container">
-          {lost &&
-            lost.map((person) => {
-              const imageData = person.img.data.data;
-              let base64String = '';
+          {filteredLost.map((person) => {
+            const imageData = person.img.data.data;
+            let base64String = '';
 
-              for (let i = 0; i < imageData.length; i++) {
-                base64String += String.fromCharCode(imageData[i]);
-              }
+            for (let i = 0; i < imageData.length; i++) {
+              base64String += String.fromCharCode(imageData[i]);
+            }
 
-              const encodedString = btoa(base64String);
+            const encodedString = btoa(base64String);
 
-
-
-              return (
-                <Box key={person._id} className="newspaper-card">
-                  <Image
-                    src={`data:image/png;base64,${encodedString}`}
-                    alt={person.name}
-                  />
-                  <div className="newspaper-card-content">
-                    <Heading as="h3" fontSize="xl" fontWeight="bold" mb={2}>
-                      {person.name}
-                    </Heading>
-                    <Text fontSize="lg">
-                      <strong>Age:</strong> {person.age}
-                    </Text>
-                    <Text fontSize="lg">
-                      <strong>Gender:</strong> {person.gender}
-                    </Text>
-                    <Text fontSize="lg">
-                      <strong>Location:</strong> {person.location}
-                    </Text>
-                    <Text fontSize="lg">
-                      <strong>Description:</strong> {person.description}
-                    </Text>
-                  </div>
-                </Box>
-              );
-            })}
+            return (
+              <Box key={person._id} className="newspaper-card">
+                <Image
+                  src={`data:image/png;base64,${encodedString}`}
+                  alt={person.name}
+                />
+                <div className="newspaper-card-content">
+                  <Heading as="h3" fontSize="xl" fontWeight="bold" mb={2}>
+                    {person.name}
+                  </Heading>
+                  <Text fontSize="lg">
+                    <strong>Age:</strong> {person.age}
+                  </Text>
+                  <Text fontSize="lg">
+                    <strong>Gender:</strong> {person.gender}
+                  </Text>
+                  <Text fontSize="lg">
+                    <strong>Location:</strong> {person.location}
+                  </Text>
+                  <Text fontSize="lg">
+                    <strong>Description:</strong> {person.description}
+                  </Text>
+                </div>
+              </Box>
+            );
+          })}
         </div>
       </Box>
     </div>
