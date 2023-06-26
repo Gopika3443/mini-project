@@ -6,7 +6,7 @@ const AboutPage = () => {
   return (
     <div>
       <div className="Scrollabout" id="about">
-      <h2 className="Abouth2">About Us</h2>
+        <h2 className="Abouth2">About Us</h2>
         <div className="FlexContainer">
           <div className="Text">
             <p>
@@ -22,72 +22,81 @@ const AboutPage = () => {
             </p>
           </div>
           <div className="ImageContainer">
-          <a href="https://ibb.co/W2BMQLK"><img src="https://i.ibb.co/kSqwptc/79z-2203-w012-n001-51c-p6-51.jpg" alt="79z-2203-w012-n001-51c-p6-51" border="0"/></a>
+            <a href="https://ibb.co/W2BMQLK"><img src="https://i.ibb.co/kSqwptc/79z-2203-w012-n001-51c-p6-51.jpg" alt="79z-2203-w012-n001-51c-p6-51" border="0" /></a>
           </div>
         </div>
         <h3 className="SubHeading">Our Mission</h3>
-        <div className="Text">
+        <div className="Flex2Container">
+
+          <div className="Image1Container">
+            <a href="https://imgbb.com/"><img src="https://i.ibb.co/WBnL7xY/bg7.png" alt="bg7" border="0" /></a>
+            {/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/XSRdL6Z/bg5.png" alt="bg5" border="0"/></a> */}
+          </div>
           <p>
             At Tracenet, we are committed to:
             Assisting in the search and recovery of missing individuals.
             Providing a centralized database of information about missing persons to aid concerned parties, authorities, and the general public.
             Facilitating collaboration and information sharing to increase the chances of locating missing persons.
             Offering a user-friendly interface and advanced search algorithms to optimize the search process.
-            <div className="Image1Container">
-            <a href="https://imgbb.com/"><img src="https://i.ibb.co/WBnL7xY/bg7.png" alt="bg7" border="0"/></a>
-            <a href="https://imgbb.com/"><img src="https://i.ibb.co/XSRdL6Z/bg5.png" alt="bg5" border="0"/></a>
-            </div>
           </p>
         </div>
 
         <h3 className="SubHeading">Our Goals</h3>
         <div className="Flex2Container">
+          <p>
+            Enable individuals to report missing persons and provide essential details to aid in their search.
+            Create a centralized database to gather and store information about missing individuals, making it easily accessible to concerned parties, authorities, and the public.
+            Foster collaboration and information sharing between users to create a strong network of support.
+            Leverage technology and advanced search algorithms to improve the efficiency of the search and recovery process.
+          </p>
           <div className="Image2Container">
-            <a href="https://imgbb.com/"><img src="https://i.ibb.co/jZ45cPg/bg3.png" alt="bg3" border="0"/></a>
+            <a href="https://imgbb.com/"><img src="https://i.ibb.co/jZ45cPg/bg3.png" alt="bg3" border="0" /></a>
           </div>
           <div className="Text">
-            <p>
-              Enable individuals to report missing persons and provide essential details to aid in their search.
-              Create a centralized database to gather and store information about missing individuals, making it easily accessible to concerned parties, authorities, and the public.
-              Foster collaboration and information sharing between users to create a strong network of support.
-              Leverage technology and advanced search algorithms to improve the efficiency of the search and recovery process.
-            </p>
+
           </div>
-       </div>
+        </div>
 
 
 
         <h3 className="SubHeading">How Tracenet Works?</h3>
-          <div className="Text">
-              <p>
-                Tracenet provides a user-friendly platform where individuals can report cases of missing persons and share relevant information.
-                Users can create profiles, upload photos, and provide detailed descriptions of missing individuals.
-                Our system employs advanced search algorithms and matching techniques to compare reported missing persons with any found individuals or potential matches.
-                Tracenet aims to connect people and provide a platform for communication and coordination between users, law enforcement agencies, and relevant organizations.
-                  <div className="Image3Container">
-                    <a href="https://imgbb.com/"><img src="https://i.ibb.co/RvHsgc9/bg1.png" alt="bg1" border="0"/></a>
-                    <a href="https://imgbb.com/"><img src="https://i.ibb.co/whCwh06/bg2.png" alt="bg2" border="0"/></a>
-                    <a href="https://imgbb.com/"><img src="https://i.ibb.co/CQF6C9z/bg4.png" alt="bg4" border="0"/></a>
-                  </div>
-              </p>
+        <div className="Flex2Container">
+         
+            <div className="Image3Container">
+
+              <a href="https://imgbb.com/"><img src="https://i.ibb.co/CQF6C9z/bg4.png" alt="bg4" border="0" /></a>
+            </div>
+            <p>
+            Tracenet provides a user-friendly platform where individuals can report cases of missing persons and share relevant information.
+            Users can create profiles, upload photos, and provide detailed descriptions of missing individuals.
+            Our system employs advanced search algorithms and matching techniques to compare reported missing persons with any found individuals or potential matches.
+            Tracenet aims to connect people and provide a platform for communication and coordination between users, law enforcement agencies, and relevant organizations.
+            </p>
+
         </div>
 
         <h3 className="SubHeading">Join Tracenet</h3>
-        <div className="Text">
+        <div className="Flex2Container">
           <p>
             We invite you to join Tracenet and become part of a community dedicated to reuniting families and bringing hope to those in need.
             Together, we can make a difference and contribute to the search for missing individuals.
             Feel free to customize this text according to your specific project requirements, tone, and objectives.
+            </p>
             <div className="Image3Container">
-              <a href="https://imgbb.com/"><img src="https://i.ibb.co/dL96ZMg/bg6.png" alt="bg6" border="0"/></a>
+              <a href="https://imgbb.com/"><img src="https://i.ibb.co/dL96ZMg/bg6.png" alt="bg6" border="0" /></a>
             </div>
-          </p>
+         
         </div>
       </div>
-
-      <div id="feedback">
-          <h2 className="Abouth2">Feedback</h2>
+      <h2 className="Abouth2">Feedback</h2>
+      <div className="feedback">
+        <div className='c1'>
+              <a href="https://imgbb.com/"><img src="https://i.ibb.co/whCwh06/bg2.png" alt="bg2" border="0" /></a>
+              </div>
+        <div className='c2'>
+         
           <FeedBack></FeedBack>
+        </div>
       </div>
 
       <h2 className="Abouth2">Contact Us</h2>
