@@ -105,10 +105,10 @@ const Frontpage = () => {
           </div>
           <ul className="links">
           <Link href="/Cases" style={{ textDecoration: 'none' }}>Cases</Link>
-            <li>About Us</li>
+          <li><a href="#about">About Us</a></li>
           {loginStatus &&  <Link href='/addCase'>Add Case</Link>}
-            <li>Feedback</li>
-            <li>
+          <li><a href="#feedback">Feedback</a></li>
+            <li><a href="#contact">Contact Us</a></li>            <li>
               <Button onClick={handleOpenDialog}>Get Started</Button>
             </li>
           </ul>
