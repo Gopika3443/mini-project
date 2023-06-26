@@ -14,13 +14,12 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Frontpage />}></Route>
-          <Route path='/Lost' element={<LostPeopleForm />}></Route>
+          <Route path='/addCase' element={<LostPeopleForm />}></Route>
           <Route path='/Home' element={<HomePage />}></Route>
           <Route path='/Feed' element={<FeedBack />}></Route>
           <Route path='/About' element={<AboutUs />}></Route>
           <Route path='/Found' element={<FoundPeopleForm />}></Route>
-          <Route path='/ListL' element={<MissingList />}></Route>
-          <Route path='/Home' element={<MissingList />}></Route>
+          <Route path='/Cases' element={<MissingList />}></Route>
 
 
 
