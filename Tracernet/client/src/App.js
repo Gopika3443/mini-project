@@ -20,6 +20,7 @@ function App() {
           <Route path='/About' element={<AboutUs />}></Route>
           <Route path='/Found' element={<FoundPeopleForm />}></Route>
           <Route path='/ListL' element={<MissingList />}></Route>
+          <Route path='/Home' element={<MissingList />}></Route>
 
 
 

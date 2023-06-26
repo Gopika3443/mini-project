@@ -4,11 +4,22 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+ 
+
+  
 }
+
 
 a {
   text-decoration: none;
+}
+.image img{
+  width: 500%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
 }
 
 ul {
@@ -16,19 +27,30 @@ ul {
   padding: 0;
   margin: 0;
 }
+.landing-page{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(71,35,138,0.8547794117647058) 82%);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 15vh;
 
+}
 .container {
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-  width: 100%; /* Set container width to 100% */
+  width: 80%; /* Set container width to 100% */
   max-width: 90%; /* Set a maximum width if needed */
 }
 
 .logo-container {
   display: flex;
   align-items: center;
+
 }
 
 .logosize {
@@ -71,7 +93,7 @@ ul {
 }
 
 .landing-page header .logo {
-  color: #5d5d5d;
+  color: #ffffff;
   font-style: normal;
   font-size: 30px;
 }
@@ -97,7 +119,7 @@ ul {
 
 .landing-page header .links li {
   margin-left: 30px;
-  color: #5d5d5d;
+  color: #ffffff;
   cursor: pointer;
   transition: .3s;
 }
@@ -140,7 +162,7 @@ ul {
 }
 
 .landing-page .content .info h1 {
-  color: #5d5d5d;
+  color: #ffffff;
   font-size: 44px;
 }
 
@@ -148,7 +170,7 @@ ul {
   margin: 0;
   line-height: 1.6;
   font-size: 15px;
-  color: #5d5d5d;
+  color: #ffffff;
 }
 
 .landing-page .content .info button {

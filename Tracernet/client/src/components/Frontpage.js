@@ -100,7 +100,7 @@ const Frontpage = () => {
             <a href="#" className="logo">Tracenet</a>
           </div>
           <ul className="links">
-            <li>Home</li>
+            <Link href="/home">Home</Link>
             <li>About Us</li>
             <li>Add Case</li>
             <li>Feedback</li>
@@ -115,11 +115,9 @@ const Frontpage = () => {
           <div className="info">
             <h1>TRACENET</h1>
             <p>The Elite Lost and Found - Lost Today, Found Tomorrow</p>
-            <Button onClick={handleOpenDialog}>Login</Button>
+            <Button  onClick={handleOpenDialog}>Login</Button>
           </div>
-          <div className="image">
-            <img src="https://i.postimg.cc/65QxYYzh/001234.png" alt="Inspiration" />
-          </div>
+          <a href="https://imgbb.com/"><img src="https://i.ibb.co/VBpgs2V/3d-illustration-red-locator-sign-map-removebg-preview.png" alt="3d-illustration-red-locator-sign-map-removebg-preview" border="0"/></a>
         </div>
       </div>
       <Modal isOpen={isOpen} onClose={handleCloseDialog}>
