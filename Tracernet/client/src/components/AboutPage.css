@@ -33,7 +33,18 @@
     margin-left: 20px; /* Adjust the margin as per your preference */
   }
   
-  
+  .Image1Container{
+   
+    display: flex;
+    justify-content: center;
+    margin-right: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%; /* Enforce the maximum width of the images */
+    max-height: 100%; /* Enforce the maximum height of the images */
+
+  }
 
   
   .Text {

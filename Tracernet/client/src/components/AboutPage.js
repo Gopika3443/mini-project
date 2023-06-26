@@ -21,9 +21,7 @@ const AboutPage = () => {
             </p>
           </div>
           <div className="ImageContainer">
-            <a href="https://imgbb.com/">
-              <img src="https://i.ibb.co/Lp6cWQf/hand-holding-red-icon-removebg-preview.png" alt="hand-holding-red-icon-removebg-preview" border="0" />
-            </a>
+          <a href="https://ibb.co/W2BMQLK"><img src="https://i.ibb.co/kSqwptc/79z-2203-w012-n001-51c-p6-51.jpg" alt="79z-2203-w012-n001-51c-p6-51" border="0"/></a>
           </div>
         </div>
         <h3 className="SubHeading">Our Mission</h3>
@@ -34,6 +32,10 @@ const AboutPage = () => {
             Providing a centralized database of information about missing persons to aid concerned parties, authorities, and the general public.
             Facilitating collaboration and information sharing to increase the chances of locating missing persons.
             Offering a user-friendly interface and advanced search algorithms to optimize the search process.
+            <div className="Image1Container">
+            <a href="https://imgbb.com/"><img src="https://i.ibb.co/WBnL7xY/bg7.png" alt="bg7" border="0"/></a>
+            <a href="https://imgbb.com/"><img src="https://i.ibb.co/XSRdL6Z/bg5.png" alt="bg5" border="0"/></a>
+            </div>
           </p>
         </div>
 
@@ -44,6 +46,9 @@ const AboutPage = () => {
             Create a centralized database to gather and store information about missing individuals, making it easily accessible to concerned parties, authorities, and the public.
             Foster collaboration and information sharing between users to create a strong network of support.
             Leverage technology and advanced search algorithms to improve the efficiency of the search and recovery process.
+            <div className="Image2Container">
+            <a href="https://imgbb.com/"><img src="https://i.ibb.co/jZ45cPg/bg3.png" alt="bg3" border="0"/></a>          
+            </div>
           </p>
         </div>
 
