@@ -23,7 +23,7 @@ const LostPeopleForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const formData = new FormData();
     formData.append('testImage', image);
     formData.append('name', lostData.name);
@@ -32,10 +32,28 @@ const LostPeopleForm = () => {
     formData.append('description', lostData.description);
     formData.append('location', lostData.location);
     formData.append('contact', lostData.contact);
-
+  
     try {
-      const res = await axios.post('https://tracenet.onrender.com/upload', formData);
-      navigate('/Cases');
+      let res; // Declare the variable outside the conditional
+  
+      if (isFoundData) {
+        res = await axios.post('https://tracenet.onrender.com/upload', formData)
+        .then((res)=>  navigate('/Cases'));
+      } else {
+        const formData2 = new FormData(); // Create a new FormData for the other request
+        formData2.append('testImage', image);
+        formData2.append('name', lostData.name);
+        formData2.append('age', lostData.age);
+        formData2.append('gender', lostData.gender);
+        formData2.append('description', lostData.description);
+        formData2.append('location', lostData.location);
+        formData2.append('contact', lostData.contact);
+  
+        res = await axios.post('https://tracenet.onrender.com/Found', formData2)
+        .then((res)=>  navigate('/FoundL'));
+      }
+  
+     
       // Handle success
       console.log('Upload successful:', res.data);
     } catch (error) {
@@ -43,6 +61,7 @@ const LostPeopleForm = () => {
       console.error('Error uploading image:', error);
     }
   };
+  
 
   const handleFormChange = (e) => {
     setLostData({
