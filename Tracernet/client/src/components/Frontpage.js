@@ -21,7 +21,10 @@ import {
 import { useNavigate } from 'react-router-dom';
 
 const Frontpage = () => {
-  const loginStatus = localStorage.getItem("loginStatus");
+
+  useEffect(() => {
+
+  }, [])    
 
   const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false);
@@ -37,6 +40,10 @@ const Frontpage = () => {
   });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  useEffect(() => {
+
+     setIsLoggedIn(window.localStorage.getItem("LoggedIn"))
+  }, [])
 
 
  
@@ -72,7 +79,7 @@ const Frontpage = () => {
     console.log(signup)
     const res = await axios.post('https://tracenet.onrender.com/register',signup)
     .then((res)=>window.localStorage.setItem("LoggedIn",true))
-    .then((res)=>navigate("/home"))
+    .then((res)=>navigate("/Cases"))
   }
 
   //api for login
@@ -106,7 +113,7 @@ const Frontpage = () => {
           <ul className="links">
           <Link href="/Cases" style={{ textDecoration: 'none' }}>Cases</Link>
             <li>About Us</li>
-          {loginStatus &&  <Link href='/addCase'>Add Case</Link>}
+          {isLoggedIn &&  <Link style={{ textDecoration: 'none' }} ml={2} href='/addCase'>Add Case</Link>}
             <li>Feedback</li>
             <li>
               <Button onClick={handleOpenDialog}>Get Started</Button>
