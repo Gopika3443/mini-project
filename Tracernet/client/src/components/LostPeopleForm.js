@@ -34,7 +34,7 @@ const LostPeopleForm = () => {
 
        try {
         const res = await axios.post('https://tracenet.onrender.com/upload', formData)
-         .then((res) => navigate('/ListL'))
+         .then((res) => navigate('/Cases'))
         // Handle success
         console.log('Upload successful:', res.data);
       } catch (error) {
