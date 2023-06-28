@@ -37,7 +37,7 @@ const FoundPeopleForm = () => {
     <div className="lostpage-container">
       <div className="lost-contain">
     <form className="lost-people-form">
-      <h2>Report Found Person</h2>
+      <div className="form-heading">Report Found Person</div>
       <div className="form-field">
         <input
           type="text"
