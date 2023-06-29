@@ -123,6 +123,7 @@ const LostPeopleForm = () => {
             <label htmlFor="image">Image</label>
             <input type="file" id="image"  className='form'  accept="image/*" onChange={handleImageUpload} />
           </div>
+          <button  type="submit" className="submit-button">Submit</button>
 
         </form>
         <div className="toggle-container">
