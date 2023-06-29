@@ -40,10 +40,12 @@ const Frontpage = () => {
     username: "",
   });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [loginStatus, setLoginStatus] = useState(false);
+  
 
   useEffect(() => {
 
-     setIsLoggedIn(!!window.localStorage.getItem("LoggedIn"))
+     setLoginStatus(window.localStorage.getItem("LoggedIn"))
      console.log(isLoggedIn)
   }, [])
 
@@ -96,7 +98,7 @@ const Frontpage = () => {
   }
   const handleLogin =async()=>{
 
-    const res = await axios.post("https://tracenet.onrender.com/login",login)
+   const res = await axios.post("https://tracenet.onrender.com/login",login)
    window.localStorage.setItem("LoggedIn",true)
     navigate("/Home")
     
@@ -115,7 +117,7 @@ const Frontpage = () => {
           <ul className="links">
           <Link href="/Cases" style={{ textDecoration: 'none' }}>Cases</Link>
           <li><a href="#about">About Us</a></li>
-          {isLoggedIn && <Link style={{ textDecoration: 'none' }} ml={4} href='/Home'>Add Case</Link>}
+          {loginStatus && <Link style={{ textDecoration: 'none' }} ml={4} href='/Home'>Add Case</Link>}
           <li><a href="#feedback">Feedback</a></li>
           <li><a href="#contact">Contact Us</a></li>
             <li>
