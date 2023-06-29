@@ -24,6 +24,7 @@ const LostPeopleForm = () => {
   };
 
   const handleSubmit = async (e) => {
+    console.log(lostData.contactnumber)
     e.preventDefault();
 
     const formData = new FormData();
@@ -50,8 +51,8 @@ const LostPeopleForm = () => {
         formData2.append('gender', lostData.gender);
         formData2.append('description', lostData.description);
         formData2.append('location', lostData.location);
-        formData.append('contactnumber', lostData.contactnumber);
-        formData.append('identification', lostData.identification);
+        formData2.append('contactnumber', lostData.contactnumber);
+        formData2.append('identification', lostData.identification);
     
 
         res = await axios.post('https://tracenet.onrender.com/Found', formData2);
@@ -105,8 +106,8 @@ const LostPeopleForm = () => {
             <input type="text" id="location" name="location" placeholder="Enter location" onChange={handleFormChange} />
           </div>
           <div className="form-field">
-            <label htmlFor="location">IdentiFication Mark</label>
-            <input type="text" id="location" name="identification" placeholder="identification " onChange={handleFormChange} />
+            <label htmlFor="identification">IdentiFication Mark</label>
+            <input type="text"  name="identification" placeholder="identification " onChange={handleFormChange} />
           </div>
 
           <div className="form-field">
@@ -122,8 +123,8 @@ const LostPeopleForm = () => {
             <input type="file"/>
           </div>
           <div className="form-field">
-            <label htmlFor="location">Contact Number</label>
-            <input type="text" id="location" name="contactnumber" placeholder="contact number" onChange={handleFormChange} />
+            <label htmlFor="contact number">Contact Number</label>
+            <input type="text" name="contactnumber" placeholder="contact number" onChange={handleFormChange} />
           </div>
           <button type="submit">Submit</button>
         </form>
