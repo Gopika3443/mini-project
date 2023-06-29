@@ -90,7 +90,7 @@ const AboutPage = () => {
 
         </div>
       </div>
-      <h2 className="Abouth2">Feedback</h2>
+      <h2 className="Abouth2" id='feedback'>Feedback</h2>
       <div className="feedback">
         <div className='c1'>
           <a href="https://imgbb.com/"><img src="https://i.ibb.co/whCwh06/bg2.png" alt="bg2" border="0" /></a>
@@ -101,7 +101,7 @@ const AboutPage = () => {
         </div>
       </div>
 
-      <h2 className="Abouth2">Contact Us</h2>
+      <h2 className="Abouth2" id='contact'>Contact Us</h2>
       <Footer></Footer>
 
 
