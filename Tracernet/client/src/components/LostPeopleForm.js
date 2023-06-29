@@ -110,6 +110,10 @@ const LostPeopleForm = () => {
             <label htmlFor="identification">IdentiFication Mark</label>
             <input type="text"  name="identification" placeholder="identification " onChange={handleFormChange} />
           </div>
+          <div className="form-field">
+            <label htmlFor="identification">Contact number</label>
+            <input type="text"  name="contactnumber" placeholder="contact number " onChange={handleFormChange} />
+          </div>
 
           <div className="form-field">
             <label htmlFor="description">Description</label>
