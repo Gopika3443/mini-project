@@ -11,17 +11,20 @@ const LostPeopleForm = () => {
     gender: '',
     description: '',
     location: '',
-    contact: '',
+    contactnumber: '',
+    identification: '',
   });
   const [image, setImage] = useState(null);
   const [isFoundData, setIsFoundData] = useState(false);
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
+    
     setImage(file);
   };
 
   const handleSubmit = async (e) => {
+    console.log(lostData.contactnumber)
     e.preventDefault();
 
     const formData = new FormData();
@@ -31,7 +34,8 @@ const LostPeopleForm = () => {
     formData.append('gender', lostData.gender);
     formData.append('description', lostData.description);
     formData.append('location', lostData.location);
-    formData.append('contact', lostData.contact);
+    formData.append('contactnumber', lostData.contactnumber);
+    formData.append('identification', lostData.identification);
 
     try {
       let res; // Declare the variable outside the conditional
@@ -47,7 +51,9 @@ const LostPeopleForm = () => {
         formData2.append('gender', lostData.gender);
         formData2.append('description', lostData.description);
         formData2.append('location', lostData.location);
-        formData2.append('contact', lostData.contact);
+        formData2.append('contactnumber', lostData.contactnumber);
+        formData2.append('identification', lostData.identification);
+    
 
         res = await axios.post('https://tracenet.onrender.com/Found', formData2);
         navigate('/FoundL');
@@ -101,6 +107,11 @@ const LostPeopleForm = () => {
             <input type="text" id="location"  className='form'  name="location" placeholder="Enter location" onChange={handleFormChange} />
           </div>
           <div className="form-field">
+            <label htmlFor="identification">IdentiFication Mark</label>
+            <input type="text"  name="identification" placeholder="identification " onChange={handleFormChange} />
+          </div>
+
+          <div className="form-field">
             <label htmlFor="description">Description</label>
             <textarea id="description"  className='form'  placeholder="Enter description" name="description" onChange={handleFormChange}></textarea>
           </div>
@@ -108,7 +119,7 @@ const LostPeopleForm = () => {
             <label htmlFor="image">Image</label>
             <input type="file" id="image"  className='form'  accept="image/*" onChange={handleImageUpload} />
           </div>
-          <button type="submit" className='btn'>Submit</button>
+
         </form>
         <div className="toggle-container">
           <button className={`toggle-button ${isFoundData ? 'active' : ''}`} onClick={handleToggle}>

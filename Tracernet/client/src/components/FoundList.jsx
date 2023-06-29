@@ -15,6 +15,7 @@ function FoundList() {
         const response = await axios.get('https://tracenet.onrender.com/getFoundData');
         if (response) {
           setLost(response.data.founddata);
+          console.log(response.data.founddata)
         }
       } catch (error) {
         console.log(error);
@@ -119,6 +120,12 @@ function FoundList() {
                   </Text>
                   <Text fontSize="lg">
                     <strong>Location:</strong> {person.location}
+                  </Text>
+                  <Text fontSize="lg">
+                    <strong>Identification:</strong> {person.identification}
+                  </Text>
+                  <Text fontSize="lg">
+                    <strong>Contact:</strong> {person.contactnumber}
                   </Text>
                   <Text fontSize="lg">
                     <strong>Description:</strong> {person.description}

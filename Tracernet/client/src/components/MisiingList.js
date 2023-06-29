@@ -15,6 +15,7 @@ function MissingPeoplePage() {
         const response = await axios.get('https://tracenet.onrender.com/getLostData');
         if (response) {
           setLost(response.data.lostdata);
+          console.log(response.data.lostdata)
         }
       } catch (error) {
         console.log(error);
@@ -116,6 +117,12 @@ function MissingPeoplePage() {
                   </Text>
                   <Text fontSize="lg">
                     <strong>Location:</strong> {person.location}
+                  </Text>
+                  <Text fontSize="lg">
+                    <strong>Identification:</strong> {person.identification}
+                  </Text>
+                  <Text fontSize="lg">
+                    <strong>Contact:</strong> {person.contactnumber}
                   </Text>
                   <Text fontSize="lg">
                     <strong>Description:</strong> {person.description}
