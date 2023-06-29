@@ -83,18 +83,19 @@ const LostPeopleForm = () => {
     <div className="lostpage-container">
       <div className="form-container">
         <form className="lost-people-form" onSubmit={handleSubmit}>
-          <h2>{isFoundData ? 'Report Lost Person' : 'Report Found Person'}</h2>
+          <div className='form-heading'>{isFoundData ? 'Report Lost Person' : 'Report Found Person'}</div>
           <div className="form-field">
-            <label htmlFor="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter name" onChange={handleFormChange} />
+            <label htmlFor="name" >Name</label>
+            <input type="text" id="name" name="name" className='form' placeholder="Enter name" onChange={handleFormChange} />
+
           </div>
           <div className="form-field">
             <label htmlFor="age">Age</label>
-            <input type="number" id="age" name="age" placeholder="Enter age" onChange={handleFormChange} />
+            <input type="number" id="age" name="age" className='form' placeholder="Enter age" onChange={handleFormChange} />
           </div>
           <div className="form-field">
             <label htmlFor="gender">Gender</label>
-            <select id="gender" name="gender" onChange={handleFormChange}>
+            <select  className='form'  id="gender" name="gender" onChange={handleFormChange}>
               <option value="">Select gender</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
@@ -103,7 +104,7 @@ const LostPeopleForm = () => {
           </div>
           <div className="form-field">
             <label htmlFor="location">Location</label>
-            <input type="text" id="location" name="location" placeholder="Enter location" onChange={handleFormChange} />
+            <input type="text" id="location"  className='form'  name="location" placeholder="Enter location" onChange={handleFormChange} />
           </div>
           <div className="form-field">
             <label htmlFor="identification">IdentiFication Mark</label>
@@ -112,21 +113,13 @@ const LostPeopleForm = () => {
 
           <div className="form-field">
             <label htmlFor="description">Description</label>
-            <textarea id="description" placeholder="Enter description" name="description" onChange={handleFormChange}></textarea>
+            <textarea id="description"  className='form'  placeholder="Enter description" name="description" onChange={handleFormChange}></textarea>
           </div>
           <div className="form-field">
             <label htmlFor="image">Image</label>
-            <input type="file" id="image" accept="image/*" onChange={handleImageUpload} />
+            <input type="file" id="image"  className='form'  accept="image/*" onChange={handleImageUpload} />
           </div>
-          <div className="form-field">
-            <label htmlFor="image">Complaint Registered</label>
-            <input type="file"/>
-          </div>
-          <div className="form-field">
-            <label htmlFor="contact number">Contact Number</label>
-            <input type="text" name="contactnumber" placeholder="contact number" onChange={handleFormChange} />
-          </div>
-          <button type="submit">Submit</button>
+
         </form>
         <div className="toggle-container">
           <button className={`toggle-button ${isFoundData ? 'active' : ''}`} onClick={handleToggle}>
@@ -137,8 +130,8 @@ const LostPeopleForm = () => {
           </button>
         </div>
       </div>
-      <div className="semi-circle">
-        <h2>Report Lost Person</h2>
+      <div className="lostpage-image">
+        <img className='img-search' src="https://i.ibb.co/SyxsVbG/search.png" alt="lost-people" border="0" />
       </div>
     </div>
   );
